@@ -16,27 +16,32 @@ jobs:
         steps:
           - name: Checkout code into workspace directory
             uses: actions/checkout@v4
+
+          - name: Authenticate Google
+            uses: 'google-github-actions/auth@v2'
+            with:
+              credentials_json: '${{ secrets.GCP_SECRET }}'
      
-          - name: Authenticate Google Cloud
-            uses: google-github-actions/auth@v2
-            with:
-              service_account: 'dataform@bi-data-sine.iam.gserviceaccount.com'
-              workload_identity_provider: 'projects/379706273353/locations/global/workloadIdentityPools/github/providers/my-repo'
+          # - name: Authenticate Google Cloud
+          #   uses: google-github-actions/auth@v2
+          #   with:
+          #     service_account: 'dataform@bi-data-sine.iam.gserviceaccount.com'
+          #     workload_identity_provider: 'projects/379706273353/locations/global/workloadIdentityPools/github/providers/my-repo'
           
-          - name: Install Dataform dependencies
-            uses: docker://dataformco/dataform:2.8.3
-            with:
-                args: install
+          # - name: Install Dataform dependencies
+          #   uses: docker://dataformco/dataform:2.8.3
+          #   with:
+          #       args: install
 
-          - name: Create credentials file 
-            run: |
-              cat $GOOGLE_APPLICATION_CREDENTIALS > .df-credentials.json
+          # - name: Create credentials file 
+          #   run: |
+          #     cat $GOOGLE_APPLICATION_CREDENTIALS > .df-credentials.json
 
-          - name: Save File as Artifact
-            uses: actions/upload-artifact@v4
-            with:
-              name: .df-credentials
-              path: .df-credentials.json
+          # - name: Save File as Artifact
+          #   uses: actions/upload-artifact@v4
+          #   with:
+          #     name: .df-credentials
+          #     path: .df-credentials.json
 
           # # - name: Change project_id to projectId
           # #   run: |
