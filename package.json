@@ -1,0 +1,6 @@
+{
+  "name": "bi-data-warehouse",
+  "dependencies": {
+    "@dataform/core": "2.4.2"
+  }
+}

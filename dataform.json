@@ -1,0 +1,7 @@
+{
+  "defaultSchema": "dataform_test",
+  "assertionSchema": "dataform_assertions",
+  "warehouse": "bigquery",
+  "defaultDatabase": "bi-data-sine",
+  "defaultLocation": "EU"
+}   
