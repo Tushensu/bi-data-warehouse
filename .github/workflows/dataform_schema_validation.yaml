@@ -1,0 +1,42 @@
+name: Dataform Schema Validation
+
+on: 
+  pull_request:
+    branches: [ "main" ]
+  push:
+    branches: [ "main" ]
+
+jobs:
+    compile:
+        runs-on: ubuntu-latest
+        permissions:
+         contents: 'read'
+         id-token: 'write'
+
+        steps:
+          - name: Checkout code into workspace directory
+            uses: actions/checkout@v4
+     
+          - name: Authenticate Google Cloud
+            uses: google-github-actions/auth@v2
+            with:
+              service_account: 'dataform@bi-data-sine.iam.gserviceaccount.com'
+              workload_identity_provider: 'projects/379706273353/locations/global/workloadIdentityPools/github/providers/my-repo'
+          
+          - name: Install Dataform dependencies
+            uses: docker://dataformco/dataform:2.8.3
+            with:
+                args: install
+
+        #   - name: Create credentials file 
+        #     run: |
+        #       cat $GOOGLE_GHA_CREDS_PATH > .df-credentials.json
+
+        #   - name: Change project_id to projectId
+        #     run: |
+        #       sed -i 's/project_id/projectId/g' .df-credentials.json
+  
+          - name: Execute Dataform dry run
+            uses: docker://dataformco/dataform:2.8.3
+            with:
+                args: run --dry-run
