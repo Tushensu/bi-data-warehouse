@@ -15,10 +15,7 @@ jobs:
             uses: actions/checkout@v4
 
           - name: Install Dataform dependencies
-            uses: docker://dataformco/dataform:3.0.0-beta.1
-            with:
-                args: install
+            run: dataform install
+
           - name: Run dataform compile
-            uses: docker://dataformco/dataform:3.0.0-beta.1
-            with:
-                args: compile
+            run: dataform compile
