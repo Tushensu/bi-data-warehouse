@@ -12,7 +12,7 @@ jobs:
 
         steps:
           - name: Checkout code into workspace directory
-            uses: actions/checkout@v2
+            uses: actions/checkout@v4
 
           - name: Install Dataform dependencies
             uses: docker://dataformco/dataform:3.0.0-beta.1
