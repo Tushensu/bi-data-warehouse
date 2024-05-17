@@ -47,7 +47,7 @@ jobs:
           # #   run: |
           # #     sed -i 's/project_id/projectId/g' .df-credentials.json
   
-          # - name: Execute Dataform dry run
-          #   uses: docker://dataformco/dataform:2.8.3
-          #   with:
-          #       args: run --dry-run
+          - name: Execute Dataform dry run
+            uses: docker://dataformco/dataform:2.8.3
+            with:
+                args: run --dry-run
