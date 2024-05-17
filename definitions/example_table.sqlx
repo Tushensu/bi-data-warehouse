@@ -1,0 +1,11 @@
+config {
+    type:"incremental",
+    uniqueKey: ["id"]
+}
+
+select 
+    1 as id,
+    "Sinethemba" as first_name,
+    "Nontshintshi" as last_name,
+    30 as age,
+    "0882221452" as phone_number 
