@@ -16,38 +16,22 @@ jobs:
         steps:
           - name: Checkout code into workspace directory
             uses: actions/checkout@v4
-
-          - name: Authenticate Google
-            uses: 'google-github-actions/auth@v2'
-            with:
-              credentials_json: '${{ secrets.GCP_SECRET }}'
      
-          
           - name: Install Dataform dependencies
             uses: docker://dataformco/dataform:2.8.3
             with:
                 args: install
 
+          - name: Authenticate Google
+            uses: 'google-github-actions/auth@v2'
+            with:
+              credentials_json: '${{ secrets.GCP_SECRET }}'
+
           - name: Write credentials file
             run: echo '${{ secrets.GCP_SECRET }}' >> .df-credentials.json
 
-        # just a comment
-
-        #   - name: Create credentials file 
-        #     run: |
-        #       cat "/home/runner/work/bi-data-warehouse/bi-data-warehouse/gha-creds-e1ea328c67ffe945.json" > .df-credentials.json
-
-        #   - name: Save File as Artifact
-        #     uses: actions/upload-artifact@v4
-        #     with:
-        #       name: .df-credentials
-        #       path: .df-credentials.json
-
-          # # - name: Change project_id to projectId
-          # #   run: |
-          # #     sed -i 's/project_id/projectId/g' .df-credentials.json
   
-          - name: Execute Dataform dry run
+          - name: Execute Dataform dry run (Schema Validation)
             uses: docker://dataformco/dataform:2.8.3
             with:
                 args: run --dry-run
