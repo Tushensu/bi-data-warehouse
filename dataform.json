@@ -1,5 +1,5 @@
 {
-  "defaultSchema": "dataform_test",
+  "defaultSchema": "analytics",
   "assertionSchema": "dataform_assertions",
   "warehouse": "bigquery",
   "defaultDatabase": "bi-data-sine",
