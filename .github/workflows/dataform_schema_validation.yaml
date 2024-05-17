@@ -31,6 +31,8 @@ jobs:
           - name: Write credentials file
             run: echo '${{ secrets.GCP_SECRET }}' >> .df-credentials.json
 
+        # just a comment
+
         #   - name: Create credentials file 
         #     run: |
         #       cat "/home/runner/work/bi-data-warehouse/bi-data-warehouse/gha-creds-e1ea328c67ffe945.json" > .df-credentials.json
