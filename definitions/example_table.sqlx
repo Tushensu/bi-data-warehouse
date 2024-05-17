@@ -1,0 +1,9 @@
+config {
+    type:"table"
+}
+
+select 
+    "Sinethemba" as first_name,
+    "Nontshintshi" as last_name,
+    30 as age,
+    "0882221452" as phone_number 
