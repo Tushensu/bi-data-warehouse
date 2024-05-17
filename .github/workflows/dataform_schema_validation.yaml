@@ -33,15 +33,15 @@ jobs:
           #   with:
           #       args: install
 
-          # - name: Create credentials file 
-          #   run: |
-          #     cat $GOOGLE_APPLICATION_CREDENTIALS > .df-credentials.json
+        #   - name: Create credentials file 
+        #     run: |
+        #       cat "/home/runner/work/bi-data-warehouse/bi-data-warehouse/gha-creds-e1ea328c67ffe945.json" > .df-credentials.json
 
-          # - name: Save File as Artifact
-          #   uses: actions/upload-artifact@v4
-          #   with:
-          #     name: .df-credentials
-          #     path: .df-credentials.json
+        #   - name: Save File as Artifact
+        #     uses: actions/upload-artifact@v4
+        #     with:
+        #       name: .df-credentials
+        #       path: .df-credentials.json
 
           # # - name: Change project_id to projectId
           # #   run: |
