@@ -10,3 +10,11 @@ select
     30 as age,
     "0882221452" as phone_number,
     "test" as control_column
+union all
+select 
+    2 as id,
+    "Sinako" as first_name,
+    "Nontshintshi" as last_name,
+    14 as age,
+    "0145251144" as phone_number,
+    "test" as control_column
