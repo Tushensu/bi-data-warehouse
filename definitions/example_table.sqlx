@@ -7,14 +7,14 @@ select
     1 as id,
     "Sinethemba" as first_name,
     "Nontshintshi" as last_name,
-    30 as age,
-    "test" as control_column,
-    "0882221452" as phone_number
+    29 as age,
+    -- "test" as control_column,
+    "0882220452" as phone_number
 union all
 select 
     2 as id,
     "Sinako" as first_name,
     "Nontshintshi" as last_name,
-    14 as age,
-    "test" as control_column,    
-    "0145251144" as phone_number
+    15 as age,
+    -- "test" as control_column,    
+    "0145250144" as phone_number
