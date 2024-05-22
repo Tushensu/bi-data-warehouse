@@ -3,5 +3,8 @@
   "assertionSchema": "dataform_assertions",
   "warehouse": "bigquery",
   "defaultDatabase": "bi-data-sine",
-  "defaultLocation": "EU"
+  "defaultLocation": "EU",
+  "vars" : {
+    "default_date_filter": "date_add(current_date, interval -3 day)"
+  }
 }   
