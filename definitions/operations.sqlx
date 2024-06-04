@@ -1,0 +1,6 @@
+config {
+    type: "operations",
+    tags: ["stored procedures"]
+}
+ 
+${procedures.createExampleTableAgain()} 

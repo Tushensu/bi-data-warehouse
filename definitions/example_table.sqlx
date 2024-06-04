@@ -20,3 +20,12 @@ select
     "test" as control_column,    
     "0145250244" as phone_number,
     ${dataform.projectConfig.vars.default_date_filter} as ddt
+union all
+select 
+    4 as id,
+    "Asiphe" as first_name,
+    "Nontshintshi" as last_name,
+    21 as age,
+    "test" as control_column,    
+    "0145220244" as phone_number,
+    ${dataform.projectConfig.vars.default_date_filter} as ddt
